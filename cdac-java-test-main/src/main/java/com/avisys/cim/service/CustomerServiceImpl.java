@@ -8,9 +8,12 @@ import org.springframework.stereotype.Service;
 import com.avisys.cim.dao.CustomerDao;
 import com.avisys.cim.pojo.Customer;
 
+
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
-
+	
+	
 	@Autowired
 	private CustomerDao customerDao;
 	@Override
@@ -37,6 +40,13 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> findByRandomSearchTerm(String firstOrLastName) {
 		// TODO Auto-generated method stub
 		return customerDao.findByRandomSearchTerm(firstOrLastName);
+	}
+	@Override
+	public String addCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		System.out.println(customer.getFirstName());
+		customerDao.addCustomer(customer);
+		return "Customer Added successfully";
 	}
 	
 	

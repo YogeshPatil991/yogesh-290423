@@ -23,11 +23,28 @@ public class Customer {
 
 	@Column(name = "MOBILE_NUMBER", unique = true, nullable = false)
 	private String mobileNumber;
+	
+	public Customer() {
+		
+	}
 
+	public Customer(String firstName, String lastName, String mobileNumber) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobileNumber = mobileNumber;
+	}
+
+	public Customer(Long id, String firstName, String lastName, String mobileNumber) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobileNumber = mobileNumber;
+	}
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}

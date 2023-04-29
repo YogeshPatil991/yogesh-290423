@@ -16,4 +16,6 @@ public interface CustomerService {
 
 	List<Customer> findByRandomSearchTerm(String firstAndLastName);
 
+	String addCustomer(Customer customer);
+
 }
