@@ -14,8 +14,4 @@ public interface CustomerService {
 
 	Customer findByMobileNumber(String mobileNumber);
 
-	List<Customer> findByRandomSearchTerm(String firstAndLastName);
-
-	String addCustomer(Customer customer);
-
 }
