@@ -18,6 +18,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	private CustomerDao customerDao;
 
+	@Autowired
 	private MobileNumberDao mobileNumberDao;
 
 	@Override
@@ -65,6 +66,14 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 		return "Customer Added successfully With Multiple Mobile Number";
+	}
+
+	@Override
+	public String deleteCustomerByMobileNumber(Long id) {
+
+		Customer customer = customerDao.findById(id).get();
+		customerDao.delete(customer);
+		return "Customer Delete Successfully";
 	}
 
 }

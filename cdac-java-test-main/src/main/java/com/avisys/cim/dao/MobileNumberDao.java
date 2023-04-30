@@ -8,5 +8,4 @@ import com.avisys.cim.pojo.MobileNumber;
 @Repository
 public interface MobileNumberDao extends JpaRepository<MobileNumber, Long> {
 
-
 }

@@ -66,4 +66,15 @@ public class CustomerController {
 		return new ResponseEntity(message, HttpStatus.OK);
 	}
 
+	@GetMapping("/delete")
+	public ResponseEntity<?> deleteCustomerByMobileNumber(@RequestParam(value = "mobileNumber") String mobileNumber) {
+		Customer customer = customerService.findByMobileNumber(mobileNumber);
+		String message = "Enter Valid Mobile Number";
+		if (customer != null) {
+			message = customerService.deleteCustomerByMobileNumber(customer.getId());
+			return new ResponseEntity(message, HttpStatus.OK);
+		}
+		return new ResponseEntity(message, HttpStatus.NOT_FOUND);
+	}
+
 }

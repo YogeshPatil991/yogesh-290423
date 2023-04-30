@@ -17,4 +17,8 @@ public interface CustomerService {
 
 	String insertCustomerWithMultipleMobileNumbers(RequestCustomer customer);
 
+	String deleteCustomerByMobileNumber(Long id);
+
+	
+
 }

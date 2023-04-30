@@ -14,5 +14,5 @@ CREATE TABLE mobile_Numbers (
     number VARCHAR(50),
     customer_id INT,
     PRIMARY KEY (id),
-    FOREIGN KEY (customer_id) REFERENCES customers(id)
+    FOREIGN KEY (customer_id) REFERENCES customers(id) on delete cascade on update cascade
 );
