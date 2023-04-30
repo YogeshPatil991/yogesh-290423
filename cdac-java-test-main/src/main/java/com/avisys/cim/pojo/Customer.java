@@ -2,9 +2,9 @@ package com.avisys.cim.pojo;
 
 import java.util.List;
 
+import com.avisys.cim.dto.RequestCustomer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -33,6 +33,12 @@ public class Customer {
 	private List<MobileNumber> mobileNumbers;
 
 	public Customer() {
+
+	}
+
+	public Customer(RequestCustomer customerRequest) {
+		this.firstName = customerRequest.getFirstName();
+		this.lastName = customerRequest.getLastName();
 
 	}
 
