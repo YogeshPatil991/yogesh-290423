@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.avisys.cim.dto.RequestCustomer;
+import com.avisys.cim.dto.RequestUpdateCustomer;
 import com.avisys.cim.pojo.Customer;
 import com.avisys.cim.service.CustomerService;
+import com.avisys.cim.service.MobileService;
 
 @RestController
 @RequestMapping("/Customer")
@@ -24,6 +26,9 @@ public class CustomerController {
 
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	private MobileService mobileService;
 
 	@GetMapping("/fetchAll")
 	public ResponseEntity<?> FetchAllCustomer() {
@@ -76,5 +81,14 @@ public class CustomerController {
 		}
 		return new ResponseEntity(message, HttpStatus.NOT_FOUND);
 	}
+	
+	@PostMapping("/update")
+	public ResponseEntity<?> updateMobileNumber(@RequestBody RequestUpdateCustomer requestUpdateCustomer ){
+		
+		String mes=mobileService.updateMobileNumber(requestUpdateCustomer);
+		
+		return new ResponseEntity (mes,HttpStatus.OK);
+	}
+	
 
 }

@@ -19,6 +19,4 @@ public interface CustomerService {
 
 	String deleteCustomerByMobileNumber(Long id);
 
-	
-
 }

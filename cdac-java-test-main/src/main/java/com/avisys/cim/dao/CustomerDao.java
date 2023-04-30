@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.avisys.cim.pojo.Customer;
+import com.avisys.cim.pojo.MobileNumber;
 
 @Repository
 @Transactional
@@ -22,5 +23,6 @@ public interface CustomerDao extends JpaRepository<Customer, Long> {
 
 	@Query(value = "SELECT c.id, c.first_name, c.last_name, m.number FROM Customers c JOIN Mobile_Numbers m ON c.id = m.customer_id  WHERE m.number = :mobileNumber", nativeQuery = true)
 	Customer findByMobileNumber(@Param("mobileNumber") String mobileNumber);
-
+	
+	
 }

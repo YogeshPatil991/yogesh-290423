@@ -5,12 +5,10 @@ import java.util.List;
 public class RequestCustomer {
 
 	private String firstName;
-	
-	private String lastName;
-	
-	private List<RequestMobille> requestMobille;
 
-	
+	private String lastName;
+
+	private List<RequestMobille> requestMobille;
 
 	public String getFirstName() {
 		return firstName;
@@ -35,8 +33,5 @@ public class RequestCustomer {
 	public void setRequestMobille(List<RequestMobille> requestMobille) {
 		this.requestMobille = requestMobille;
 	}
-	
-	
-	
-	
+
 }
